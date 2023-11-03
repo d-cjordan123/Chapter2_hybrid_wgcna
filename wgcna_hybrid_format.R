@@ -42,3 +42,34 @@ write.csv(bros, file = "bros_filtered.csv", row.names = FALSE, col.names = TRUE)
 
 log_bros <- read.csv("bros_filtered.csv", check.names = FALSE, stringsAsFactors = FALSE, header = TRUE)
 
+#Manipulate file to match WGCNA requested format 
+#Basically need to flip the columns and rows 
+row.names(log_bros) = log_bros$X
+log_bros$X = NULL
+log_bros = as.data.frame(t(log_bros))
+dim(log_bros)
+
+#Columns and rows are now flipped, but column names have been replaced. Need to set them back to Trinity_ID
+#This will make the first row (the trinity IDs) the column names 
+names(log_bros) <- log_bros[1,]
+log_bros <- log_bros[-1,]
+
+#For some reason the dataset is not read as a numeric file, and the easiest way to fix this 
+#is to export it as a csv and then read it back in and it will read the data as a numeric dataset
+#Also need to specify that the row names are indeed row names otherwise that messes up the numeric read as well
+log_bros$row.names <- rownames(log_bros)
+
+write.csv(log_bros, file = "log_bros.csv", row.names = FALSE, col.names = TRUE)
+
+log_bros_num <- read.csv("log_bros.csv", row.names = "row.names", stringsAsFactors = FALSE, header = TRUE)
+
+#This should now be a numeric dataset
+#Now moving to see if there are any gene outliers 
+
+gsg = goodSamplesGenes(log_bros_num, verbose = 3)
+
+gsg$allOK
+
+#True, so there are no gene outliers that need to be filtered 
+
+###Now need to move to supercomputer for the remaining steps###
