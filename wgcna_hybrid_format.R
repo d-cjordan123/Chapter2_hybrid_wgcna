@@ -11,7 +11,7 @@ library(flashClust)
 
 #Read in data 
 #NORMALIZED counts matrix 
-cforn_data <- read.csv("cforn_hybrid_isoform_counts_matrix.csv", check.names = FALSE,
+cforn_data <- read.csv("cforn_hybrid_isoform_counts_matrix_raw.csv", check.names = FALSE,
                        stringsAsFactors = FALSE)
 
 #Make DGE list 
@@ -24,15 +24,15 @@ bros <- bros[keep, , keep.lib.sizes=FALSE]
 
 #How many genes do I have after filtering?
 summary(bros$genes)
-#74867, too many 
+#75872, too many 
 
 #Filter again (>5cpm in 3 or more libraries)
-keep <- rowSums(cpm(bros)>3) >=3
+keep <- rowSums(cpm(bros)>5) >=3
 bros <- bros[keep, , keep.lib.sizes=FALSE]
 
 #How many genes do I have after filtering?
 summary(bros$genes)
-#29032--this is a good number
+#26724--this is a good number
 
 #Log transformation 
 bros$logCPM <- log2(bros$counts[,-1] +1)
