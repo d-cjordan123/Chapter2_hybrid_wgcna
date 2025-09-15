@@ -1,0 +1,27 @@
+sample ,Day6,Day7,Day8,Day10,Day12,Day30,Day180,CfSMP1,CfSMP2
+cforn_pota_V045.tsv,1,0,0,0,0,0,0,5.19,0
+cforn_pota_V046.tsv,1,0,0,0,0,0,0,5.65,0.54
+cforn_pota_V047.tsv,1,0,0,0,0,0,0,3.66,0
+cforn_ehip_V048.tsv,0,1,0,0,0,0,0,6.02,0.41
+cforn_ehip_V049.tsv,0,1,0,0,0,0,0,6.14,0
+cforn_ehip_V050.tsv,0,1,0,0,0,0,0,6.05,0
+cforn_ehip_V052.tsv,0,1,0,0,0,0,0,5.2,0.23
+cforn_lhip_V001.tsv,0,0,1,0,0,0,0,6.46,0
+cforn_lhip_V002.tsv,0,0,1,0,0,0,0,6.94,0
+cforn_lhip_V003.tsv,0,0,1,0,0,0,0,7.16,0
+cforn_lhip_V004.tsv,0,0,1,0,0,0,0,7.003,0
+cforn_evel_V005.tsv,0,0,0,1,0,0,0,3.99,0
+cforn_evel_V006.tsv,0,0,0,1,0,0,0,4.33,0
+cforn_evel_V007.tsv,0,0,0,1,0,0,0,4.17,0
+cforn_evel_V008.tsv,0,0,0,1,0,0,0,3.904,0
+cforn_lvel_V009.tsv,0,0,0,0,1,0,0,5.65,0
+cforn_lvel_V010.tsv,0,0,0,0,1,0,0,6.43,0
+cforn_lvel_V011.tsv,0,0,0,0,1,0,0,5.45,0
+cforn_lvel_V012.tsv,0,0,0,0,1,0,0,5.107,0
+cforn_juve_V013.tsv,0,0,0,0,0,1,0,5.29,3.26
+cforn_juve_V014.tsv,0,0,0,0,0,1,0,5.25,0
+cforn_juve_V015.tsv,0,0,0,0,0,1,0,6.09,4.004
+cforn_juve_V016.tsv,0,0,0,0,0,1,0,6.64,3.72
+cforn_adul_V053.tsv,0,0,0,0,0,0,1,7.22,6.84
+cforn_adul_V054.tsv,0,0,0,0,0,0,1,8.09,5.92
+cforn_adul_V055.tsv,0,0,0,0,0,0,1,8.75,7.99
