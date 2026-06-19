@@ -43,44 +43,44 @@ pink <- as.data.frame(pink_list)
 
 magenta <- as.data.frame(magenta_list)
 
-magenta <- as.data.frame(magenta_list)
+red <- as.data.frame(mred_list)
 
 #Rename column names to "genes" 
-colnames(green) <- c("genes")
-colnames(lightcyan) <- c("genes")
 colnames(pink) <- c("genes")
+colnames(magenta) <- c("genes")
+colnames(red) <- c("genes")
 
 #Filter modules out from dataframe to get expression data 
-subset_green <- filter(log_bros, log_bros$genes %in% green$genes)
+subset_pink <- filter(log_bros, log_bros$genes %in% pink$genes)
 
-subset_lightcyan <- filter(log_bros, log_bros$genes %in% lightcyan$genes)
+subset_magenta <- filter(log_bros, log_bros$genes %in% magenta$genes)
 
-subset_pink <- filter(log_bros, log_bros$genes %in%  pink$genes)
+subset_red <- filter(log_bros, log_bros$genes %in% red$genes)
 
 #Write filtered modules out as csv 
-write.csv(subset_green, file = "subset_green.csv")
-
-write.csv(subset_lightcyan, file = "subset_lightcyan.csv")
-
 write.csv(subset_pink, file = "subset_pink.csv")
+
+write.csv(subset_magenta, file = "subset_magenta.csv")
+
+write.csv(subset_red, file = "subset_red.csv")
 
 #Change module format 
 #Transpose data 
-transposed_green <- t(subset_green)
-
-transposed_lightcyan <- t(subset_lightcyan)
-
 transposed_pink <- t(subset_pink)
 
+transposed_magenta <- t(subset_magenta)
+
+transposed_red <- t(subset_red)
+
 #Set first row as column names
-colnames(transposed_green) <- transposed_green[1,]
-transposed_green <- transposed_green[-1, ] 
-
-colnames(transposed_lightcyan) <- transposed_lightcyan[1,]
-transposed_lightcyan <- transposed_lightcyan[-1, ] 
-
 colnames(transposed_pink) <- transposed_pink[1,]
 transposed_pink <- transposed_pink[-1, ] 
+
+colnames(transposed_magenta) <- transposed_magenta[1,]
+transposed_magenta <- transposed_magenta[-1, ] 
+
+colnames(transposed_red) <- transposed_red[1,]
+transposed_red <- transposed_red[-1, ] 
 
 #Convert transposed data back into dataframe 
 transposed_green <- data.frame(transposed_green)
