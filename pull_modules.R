@@ -32,18 +32,18 @@ log_bros_num <- read.csv("log_bros.csv", row.names = "row.names", stringsAsFacto
 log_bros <- read.csv("bros_filtered.csv", check.names = FALSE, stringsAsFactors = FALSE, header = TRUE)
 
 #Pull modules from colors and make them their own value 
-green_list <- names(log_bros_num)[moduleColors == "green"]
-
-lightcyan_list <- names(log_bros_num)[moduleColors == "lightcyan"]
-
 pink_list <- names(log_bros_num)[moduleColors == "pink"]
 
+magenta_list <- names(log_bros_num)[moduleColors == "magenta"]
+
+red_list <- names(log_bros_num)[moduleColors == "red"]
+
 #Convert lists to dataframe 
-green <- as.data.frame(green_list)
-
-lightcyan <- as.data.frame(lightcyan_list)
-
 pink <- as.data.frame(pink_list)
+
+magenta <- as.data.frame(magenta_list)
+
+magenta <- as.data.frame(magenta_list)
 
 #Rename column names to "genes" 
 colnames(green) <- c("genes")
